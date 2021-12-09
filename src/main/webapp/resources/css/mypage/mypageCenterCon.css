@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+#con2 {
+    /* 추가 */
+    /* border: 1px solid blue; */
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+    min-height : 80vw;
+    height : auto;
+}
+
+.mypageTableHo:hover{
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.1);
+	
+}
+
+.mypageTableHo td ul li{
+	margin-top: 1rem;
+}
+
+#menu_m {
+    display: none;
+}
+
+.searchBox {
+    /* 추가 */
+    border: 3px solid rgb(223, 221, 221);
+    width: 65%;
+    height: 3%;
+    margin: 0 auto;
+    padding: 1% 0% 3% 0%;
+}
+
+#searchOp {
+    width: 10%;
+    padding: 1%;
+    font-size: 1rem;
+}
+
+#searchText {
+    width: 70%;
+    padding: 1%;
+}
+
+#searchBtn {
+    width: 10%;
+    background-color: #FFCECB;
+    border: 0.5px solid red;
+    padding: 1%;
+    font-size: 1rem;
+}
+
+.mypageTabel {
+    margin: 0 auto;
+    width: 95%;
+    
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    min-width: 63rem;
+    border-spacing: 0;
+}
+
+.mypageTabel th{
+	border-bottom: solid 0.1rem black;;
+	height: 5rem;
+}
+
+.mypageTabel td{
+	border-top: solid 0.1rem #D3D3D3;;
+	height: 3rem;
+}
+
+#myShoppingList th {
+    padding: 0.5%;
+}
+
+
+
+
+h3{
+	text-align: left;
+	margin-left: 2rem;
+}
+
+/* 줄넘어가기 방지 넘어갈시 ...처리 */
+.txtShort{
+	max-width: 25rem;
+	text-overflow : ellipsis;	/* text의 길이가 길어지면 자동으로 줄이 바뀌는데 이를 한줄로 설정한다. */
+	overflow : hidden;	/* width가 고정되어있는 상태에서 text가 길어지면 해당 element를 넘어서는데 이를 표시하지 않는다. */
+	white-space : nowrap;	/* 넘어간 text대신 ...으로 text를 대체한다. */
+	
+}
+
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+    #con2 {
+        /* border: 1px solid blue; */
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        /* border: 1px solid red; */
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        /* border: 1px solid red; */
+        text-decoration: none;
+        color: #000;
+        
+    }
+
+    .searchBox {
+        border: 3px solid rgb(223, 221, 221);
+        width: 80%;
+        height: 10%;
+        margin: 0 auto;
+        padding: 1% 0% 3% 0%;
+    }
+    
+    #searchOp {
+        width: 20%;
+        padding: 1%;
+        font-size: 1rem;
+    }
+    
+    #searchText {
+        width: 60%;
+        padding: 1%;
+    }
+    
+    #searchBtn {
+        width: 10%;
+        background-color: #FFCECB;
+        border: 0.5px solid red;
+        padding: 1%;
+        font-size: 0.8rem;
+    }
+
+    #myShoppingList {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 0.8rem;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        min-width: 63rem;
+    }
+
+}

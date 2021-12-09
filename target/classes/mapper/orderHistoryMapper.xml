@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.bbs.mapper.OrderHistoryMapper">
+	
+	<select id="myOrderHistory" resultType="com.bbs.model.ProductDTO">
+		select *
+		from product p left join p_order po on p.p_no = po.p_no
+		where m_no = #{m_no}
+		
+	</select>
+	
+	
+	
+</mapper>

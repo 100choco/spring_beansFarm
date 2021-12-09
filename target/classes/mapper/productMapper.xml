@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.ProductMapper">
+
+	<insert id="insert">
+		insert into product (category_no, p_name, p_price, p_manufacturer, origin_no, p_image, p_thumbnail) 
+			values (#{category_no}, #{p_name}, #{p_price}, #{p_manufacturer}, #{origin_no}, #{p_image}, #{p_thumbnail})
+	</insert>
+
+	<!-- 검색을 포함한 select문 -->
+	<select id="selectByAll" resultType="com.bbs.model.ProductDTO">
+		select * from product as p join category as c on p.category_no = c.category_no 
+			join origin o ON p.origin_no = o.origin_no 
+		<if test="keyword != null">
+			<choose>
+			<when test="type == 'c_id'">
+				where category_name like concat('%', #{keyword}, '%')
+			</when>
+			<when test="type == 'pname_id'">
+				where p_name like concat('%', #{keyword}, '%')
+			</when>
+			<when test="type == 'ori_id'">
+				where origin_name like concat('%', #{keyword}, '%')
+			</when>
+			</choose>
+		</if>
+		order by p_no desc
+	</select>
+	
+	<!-- 검색에 필요한 Total 따로만듬 -->
+	<select id="prodGetTotal" resultType="int">
+		select count(*) from product as p join category as c on p.category_no = c.category_no 
+			join origin o ON p.origin_no = o.origin_no
+		<if test="keyword != null">
+			<choose>
+			<when test="type == 'c_id'">
+				where category_name like concat('%', #{keyword}, '%')
+			</when>
+			<when test="type == 'pname_id'">
+				where p_name like concat('%', #{keyword}, '%')
+			</when>
+			<when test="type == 'ori_id'">
+				where origin_name like concat('%', #{keyword}, '%')
+			</when>
+			</choose>
+		</if>
+	</select>
+	
+	<select id="selectByPNo" resultType="com.bbs.model.ProductDTO">
+		select * from product where p_no like #{p_no}
+	</select>
+	
+	<select id="selectByName" resultType="com.bbs.model.ProductDTO">
+		select * from product where p_name like #{p_name}
+	</select>
+	
+	<select id="selectByOrigin" resultType="com.bbs.model.ProductDTO" >
+		select p_no, category_no, p_name, p_price, p_manufacturer, o.origin_no, p_image, p_thumbnail, origin_name 
+			from product p join origin o 
+				on p.origin_no = o.origin_no 
+					where o.origin_name like #{origin_name}
+	</select>
+	
+	<select id="selectByAllDetails" resultType="com.bbs.model.ProductDTO">
+		select p.p_no, category_no, p_name, p_price, p_manufacturer, origin_no, p_image, p_thumbnail, pd_image
+			from product p 
+				join product_details_page pdp
+					on p.p_no = pdp.p_no
+						order by p_no desc
+	</select>
+	
+	<select id="selectByAllPage" resultType="com.bbs.model.ProductDTO">
+		select p.p_no, category_no, p_name, p_price, p_manufacturer, origin_no, p_image, p_thumbnail, pd_image
+			from product p 
+				join product_details_page pdp
+					on p.p_no = pdp.p_no
+					<if test='type != ""'>
+						where category_no = #{type}
+					</if>
+					<if test='keyword != ""'>
+						where p_name Like concat('%',#{keyword},'%') 
+					</if>
+						order by p_no desc 
+							limit #{skip}, #{amount}
+		
+	</select>
+	
+
+	<select id="getTotal" resultType="int">
+		select count(*)
+			from product p 
+				join product_details_page pdp
+					on p.p_no = pdp.p_no
+					<if test='type != ""'>
+						where category_no = #{type}
+					</if>
+					<if test='keyword != ""'>
+						where p_name Like concat('%',#{keyword},'%') 
+					</if>
+	</select>
+	
+
+	<update id="update">
+		update product set category_no = #{category_no}, p_name = #{p_name}, p_price = #{p_price}, p_manufacturer = #{p_manufacturer}, origin_no = #{origin_no}, p_image = #{p_image}, p_thumbnail = #{p_thumbnail}
+			where p_no = #{p_no}
+	</update>
+
+	<delete id="delete">
+		delete from product where p_no = #{p_no}
+	</delete>
+
+</mapper>

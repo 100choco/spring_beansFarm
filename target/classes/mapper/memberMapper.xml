@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.bbs.mapper.MemberMapper">
+	
+	<insert id="memberInsert">
+		insert into member(m_id, m_pw, m_name, m_phone, m_postnum, m_address, m_detailed_address, m_email) 
+						values(#{m_id}, #{m_pw}, #{m_name}, #{m_phone}, #{m_postnum}, #{m_address}, #{m_detailed_address}, #{m_email})
+	</insert>
+
+	<select id="idchkAjax" parameterType="com.bbs.model.MemberDTO" resultType="int">
+		select count(*) from member where m_id=#{m_id}
+	</select>
+
+	<select id="loginChkAjax" parameterType="com.bbs.model.MemberDTO" resultType="int">
+		select count(*) from member where m_id=#{m_id} and m_pw=#{m_pw}
+	</select>
+	
+	<select id="memberLogin" resultType="com.bbs.model.MemberDTO">
+		select * from member where m_id=#{m_id}
+	</select>
+	
+	<select id="emailChkajax" parameterType="com.bbs.model.MemberDTO" resultType="String">
+		select m_id from member where m_email=#{m_email}
+	</select>
+	
+	<update id="pwUpdate">
+		update member set m_pw=#{m_pw} where m_id = #{m_id} 
+	</update>
+	
+	<select id="emailchkAjax" parameterType="com.bbs.model.MemberDTO" resultType="int">
+		select count(*) from member where m_email=#{m_email}
+	</select>
+		
+		
+	
+	<!-- 회원목록(관리자페이지 메인에서 출력) 페이징 검색기능 추가 -->
+	<select id="listAllMain" resultType="com.bbs.model.MemberDTO">
+		select m.*,ms.membership_name from member m join membership ms 
+					where m.membership_no = ms.membership_no limit #{skip}, #{amount}
+	</select>
+	
+	<!-- 회원목록(관리자페이지 메인에서 출력) 페이징 숫자 갯수 나타남 -->
+	<select id="getTotalMain" resultType="int">
+		select count(*) from member m join membership ms 
+						where m.membership_no = ms.membership_no
+	</select>
+	
+	
+	
+	
+	
+	<!-- 회원목록(관리자페이지 출력) 페이징 검색기능 추가 -->
+	<select id="listAll" resultType="com.bbs.model.MemberDTO">
+		select m.*,ms.membership_name from member m join membership ms 
+					where m.membership_no = ms.membership_no 
+					
+					<if test="keyword != null">
+					
+						<choose>
+						
+			            	<when test="type == 's_id'">
+			                	and m_id like concat('%',#{keyword},'%') 
+			            	</when>
+			            
+				            <when test="type == 's_tier'">
+				                and membership_name like concat('%',#{keyword},'%') 
+				            </when>
+				            
+			        	</choose>
+					
+					</if>	
+					                	
+                	
+		limit #{skip}, #{amount}
+	</select>
+	
+	<!-- 회원목록(관리자페이지 출력) 페이징 숫자 갯수 나타남 -->
+	<select id="getTotal" resultType="int">
+		select count(*) from member m join membership ms 
+						where m.membership_no = ms.membership_no
+						
+						<if test="keyword != null">
+					
+						<choose>
+						
+			            	<when test="type == 's_id'">
+			                	and m_id like concat('%',#{keyword},'%') 
+			            	</when>
+			            
+				            <when test="type == 's_tier'">
+				                and membership_name like concat('%',#{keyword},'%') 
+				            </when>
+				            
+			        	</choose>
+					
+					</if>
+	</select>
+	
+	
+	
+	
+	<update id="memberdelete">
+		update member set m_leave='y' where m_id=#{m_id}
+	</update>
+	
+	<select id="listOne" resultType="com.bbs.model.MemberDTO">
+		select m.*,ms.membership_name from member m join membership ms 
+				where m.membership_no = ms.membership_no 
+				and m.m_id = #{m_id}
+	</select>
+
+	<update id="memberTierupdate">
+		update member set membership_no = (select membership_no from membership 
+											where membership_name = #{msName})
+						where m_id = #{m_id}
+	</update>
+	
+	<delete id="memberInfodelete">
+		delete from member where m_id = #{m_id}
+	</delete>
+	
+	<update id="memberUpdate">
+		update member set m_phone=#{m_phone}, m_postnum=#{m_postnum}, m_address=#{m_address}, m_detailed_address=#{m_detailed_address}
+							where m_id=#{m_id}
+	</update>
+	
+	
+
+</mapper>

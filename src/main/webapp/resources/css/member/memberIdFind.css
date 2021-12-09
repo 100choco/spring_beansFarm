@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/* #conter {
+    width: 100%;
+    min-height : 80vw;
+    height : auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid red;
+}  */
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+    min-height : 80vw;
+    height : auto;
+    margin-top: 10%;
+    /* border: 1px solid red; */
+    
+}
+
+#content h1 {
+    text-align: center;
+}
+
+#idFindTbl{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid blue; */
+
+}
+
+#idFindTbl td input {
+    width: 50%;
+    padding: 2% 1%;
+    /* border: 1px solid green; */
+}
+
+#idFindBtn{
+    width: 50%;
+    padding: 1%;
+    border: 0;
+    background-color: gainsboro;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#idFindBtn:hover{
+    width: 50%;
+    padding: 1%;
+    border: 0;
+    background-color: blue;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#previousBtn {
+	width: 10%;
+	padding: 0.5%;
+}
+
+
+
+
+
+/* --------------------------------  idSend.jsp */
+#emilSend {
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#loginBtn {
+    padding: 2%;
+    background-color: gainsboro;
+    border: 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#loginBtn:hover {
+    padding: 2%;
+    background-color: blue;
+    border: 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: red;
+}

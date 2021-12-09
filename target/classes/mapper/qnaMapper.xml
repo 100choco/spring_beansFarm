@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.bbs.mapper.QnaMapper">
+	
+	<!-- 페이징 후 전체 출력	 -->
+	
+	<select id="listPaging" resultType="com.bbs.model.QnaDTO">
+		 select *
+		 from (select  q.q_no, q.q_title, q.q_content, q.m_no,
+		 q.q_reg_date, q.ic_no, q.manager_no, q.q_status, q.q_answer, q.q_answer_date,
+		 m.m_name, ic.ic_name
+		 from qna as q 
+		 left join member as m 
+		 on q.m_no = m.m_no
+		 left join inquiry_classification as ic 
+		 on q.ic_no = ic.ic_no
+		 order by q.q_no desc) as t1
+		 limit #{skip}, #{amount}
+	</select>
+
+	<select id="getTotal" resultType="int">
+		select count(*) from qna
+	</select>
+	
+	<select id="view_user" resultType="com.bbs.model.QnaDTO">
+		 select *
+		 from (select  q.q_no, q.q_title, q.q_content, q.m_no,
+		 q.q_reg_date, q.ic_no, q.manager_no, q.q_status, q.q_answer, q.q_answer_date,
+		 m.m_name, ic.ic_name
+		 from qna as q 
+		 left join member as m 
+		 on q.m_no = m.m_no
+		 left join inquiry_classification as ic 
+		 on q.ic_no = ic.ic_no
+		 where q.m_no = #{m_no}
+		 order by q.q_no desc) as t1
+		 limit #{skip}, #{amount}
+	</select>
+	
+	
+	<!-- 입력 구문 -->
+	
+ 	<insert id="insert">
+  		insert into qna(q_title, q_content, q_image, m_no, ic_no) values(#{q_title}, #{q_content}, #{q_image}, #{m_no}, #{ic_no})
+  	</insert>
+  	
+  	<!-- 테이블 한개 출력 구문 -->
+  	
+  	<select id="viewOne" resultType="com.bbs.model.QnaDTO">
+  		select * from qna q left join manager ma on q.manager_no = ma.manager_no where q_no = #{q_no}
+  	</select>
+  	
+  	<!-- 삭제 구문 -->
+  	
+  	<delete id="delete">
+  		delete from qna where q_no = #{q_no}
+  	</delete>
+  	
+  	<!-- 글 수정 구문 -->
+  	
+  	<update id="update">
+  		update qna set q_title = #{q_title}, q_content = #{q_content}, q_image = #{q_image}, ic_no = #{ic_no} where q_no = #{q_no}
+  	</update>
+  	
+  	<!-- 답변 구문	 -->
+  	
+  	<update id="answer">
+  		update qna set manager_no = #{manager_no}, q_status = #{q_status}, q_answer = #{q_answer} where q_no = #{q_no}
+  	</update>
+  	
+  	<update id="answerajax">
+  		update qna set manager_no = #{manager_no}, q_status = "답변완료", q_answer = #{q_answer}, q_answer_date = now() where q_no = #{q_no}
+  	</update>
+  
+  	<update id="answerDeleteAjax">
+  		update qna set manager_no = #{manager_no}, q_status = "답변 대기중", q_answer = #{q_answer} where q_no = #{q_no}
+  	</update>	
+ 
+  </mapper>

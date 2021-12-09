@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+#con2 {
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+	min-height : 80vw;
+    height : auto;
+}
+
+#menu_m {
+    display: none;
+}
+
+.searchBox {
+    width: 65%;
+    height: 3%;
+    margin: 0 auto;
+    padding: 1% 0% 3% 0%;
+}
+
+#searchOp {
+    width: 10%;
+    padding: 1%;
+    font-size: 1rem;
+}
+
+#searchText {
+    width: 70%;
+    padding: 1%;
+}
+
+#searchBtn {
+  margin-left: 1%;
+  margin-bottom:1%;
+  background-color: white;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1.2rem; 
+  padding: 0%;
+}
+
+#searchBtn:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+#type{
+	height: 2.7rem;
+	font-size: 1.3rem;
+	margin-top: 2%;
+}
+
+#keyword{
+	height: 2.4rem;
+	font-size: 1.3rem;
+	outline: none;
+}
+
+#noticeTbl {
+    margin: 0 auto;
+    width: 85%;
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-spacing: 0;
+    margin-top: 3%;
+}
+
+#noticeTbl td {
+    padding: 0.8%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    font-size: 1.2rem;
+}
+
+#noticeTbl th {
+    padding: 0.5%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    height: 2rem;
+}
+
+#writeBtn{
+	float: left;
+	width: 8%;
+	height: 3rem;
+    padding: 0.5%;
+    font-size: 1rem;
+	margin-left : 7.5%;
+    color: black; 
+  	border: 0.2rem solid #FFCECB;
+  	background-color: white;
+  	cursor: pointer;
+}
+
+#writeBtn:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+} 
+
+ a{
+	color : black;
+	text-decoration: none;	
+}
+
+.pageInfo{
+	margin-top : 3%;
+	text-align: center;
+}
+
+.pageInfo li{
+		display : inline-block;
+		list-style-type: none;
+		margin-left: 2%;
+	}
+	
+.pageInfo li a{
+		float: left;
+	}
+
+.button2 {
+  background-color: white;
+  margin-top : 1%;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1rem;  
+}
+
+.button2:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+#faqContent{
+	white-space: pre-line;
+	margin-left: 10%;
+}
+
+.txtShort{
+   max-width: 25rem;
+   text-overflow : ellipsis;
+   overflow : hidden;
+   white-space : nowrap;
+}
+
+
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+    #con2 {
+        /* border: 1px solid blue; */
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        text-decoration: none;
+        color: #000;
+        
+    }
+
+    .searchBox {
+        width: 80%;
+        height: 8%;
+        margin: 0 auto;
+        padding: 1% 0% 3% 0%;
+        display: inline-block;
+    }
+    
+    #searchOp {
+        width: 20%;
+        padding: 1%;
+        font-size: 1rem;
+    }
+    
+    #searchText {
+        width: 60%;
+        padding: 1%;
+    }
+    
+    #searchBtn {
+        width: 18%;
+        height: 3rem;
+		background-color: white;
+		color: black; 
+		border: 0.2rem solid #FFCECB;
+		cursor: pointer;
+        padding: 0%;
+        margin-top: 4%;
+    }
+    
+    #searchBtn:hover {
+ 	 background-color: #FFCECB;
+  	 color: white;
+ 	 cursor: pointer;
+	}
+    
+    #type{
+    	width: 25%;
+    	outline: none;
+    }
+    
+    #keyword{
+   		width: 70%;
+   		outline: none;
+    }
+    
+	#writeBtn{
+	float: left;
+	width: 25%;
+    padding: 0.5%;
+    font-size: 1rem;
+    margin-bottom : 1%;
+    margin-left: 5%;
+	}
+
+    #noticeTbl {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 0.8rem;
+        border-top: 0.2rem solid black;
+        border-bottom: 0.2rem solid black;
+    }
+    
+/* 	#table-container table, 
+	#table-container thead, 
+	#table-container tbody, 
+	#table-container th, 
+	#table-container td, 
+	#table-container tr { 
+		display: block; 
+	}
+
+	#table-container thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#table-container td { 
+		Behave  like a "row"
+		border: none;
+
+		position: relative;
+		padding-left: 30%; 컬럼위치조정
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#table-container td:before { 
+		Now like a table header
+		position: absolute;
+		Top/left values mimic padding
+		top: 5%;
+		left: 5%;
+		width: 45%; 
+		padding-right: 0.1rem; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	#table-container td:before { content: attr(data-title); } */
+
+.button2{
+	width: 18%;
+}
+
+#th_width{
+	width: 25%;
+}
+ 
+}  

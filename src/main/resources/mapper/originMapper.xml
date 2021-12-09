@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.OriginMapper">
+
+	<insert id="insert">
+		insert into origin(origin_name) values (#{origin_name})
+	</insert>
+
+	<select id="selectByAll" resultType="com.bbs.model.OriginDTO">
+		select * from origin;
+	</select>
+
+	<update id="update">
+		update origin set origin_name = #{origin_name} where origin_no = #{origin_no}
+	</update>
+
+	<delete id="delete">
+		delete from origin where origin_no = #{origin_no}
+	</delete>
+
+</mapper>

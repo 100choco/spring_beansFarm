@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+#con2 {
+    /* 추가 */
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+	min-height : 80vw;
+    height : auto;
+}
+
+.button2 {
+  margin-top: -1.7%;
+  margin-left: 2.4%;
+  margin-bottom:1%;
+  background-color: white;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1rem; 
+  float: left;
+  padding: 0%;
+}
+
+.button2:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+#menu_m {
+    display: none;
+}
+
+
+#noticeTbl2 {
+   border-bottom: 0.1rem solid black;
+}
+
+.noticeTbl{
+    margin: 0 auto;
+    padding: 1%;
+    width: 95%;
+}
+
+#noticeTbl td {
+    padding: 0.5%;
+}
+
+#noticeTbl th {
+    padding: 0.5%;
+}
+
+#noticeTbl2 td {
+    padding: 0.5%;
+}
+
+#noticeTbl2 th {
+    padding: 0.5%;
+}
+
+.pageInfo{
+	margin-top : 3%;
+    text-align: center;
+}
+
+.pageInfo li{
+      display : inline-block;
+      list-style-type: none;
+      margin-left: 2%;
+   }
+   
+.pageInfo li a{
+      float: left;
+   }
+
+
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+    #con2 {
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        text-decoration: none;
+        color: #000;
+        
+    }
+    
+#backbtn, #upbtn, #delbtn{
+	margin-top: 1%;
+	width: 18%;
+}
+    
+.table-container{
+	 width: 100%;	
+	 overflow-x:auto;
+     white-space: nowrap;
+     margin: 0;
+	}
+	
+::-webkit-scrollbar { -webkit-appearance: none; } 
+::-webkit-scrollbar:vertical { width: 0.1rem; } 
+::-webkit-scrollbar:horizontal { height: 0.3rem; } 
+::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, .5); border-radius: 0.1rem; border: 0.2rem solid #ffffff; } 
+::-webkit-scrollbar-track { border-radius: 0.1rem; background-color: #ffffff;}	
+
+
+}

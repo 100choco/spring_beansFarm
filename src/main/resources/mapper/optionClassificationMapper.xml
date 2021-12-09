@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.OptionClassificationMapper">
+
+	<insert id="insert">
+		insert into option_classification(oc_name) values (#{oc_name})
+	</insert>
+
+	<select id="selectByAll" resultType="com.bbs.model.OptionClassificationDTO">
+		select * from option_classification;
+	</select>
+
+	<update id="update">
+		update option_classification set oc_name = #{oc_name} where oc_no = #{oc_no}
+	</update>
+
+	<delete id="delete">
+		delete from option_classification where oc_no = #{oc_no}
+	</delete>
+
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.ProductDetailsPageMapper">
+
+	<insert id="insert">
+		insert into product_details_page (p_no, pd_image) values (#{p_no}, #{pd_image})
+	</insert>
+
+	<select id="selectByAll" resultType="com.bbs.model.ProductDetailsPageDTO">
+		select * from product_details_page;
+	</select>
+	
+	<select id="selectByPNo" resultType="com.bbs.model.ProductDetailsPageDTO">
+		select * from product_details_page where p_no = #{p_no};
+	</select>
+
+	<update id="update">
+		update product_details_page set pd_image = #{pd_image} where p_no = #{p_no}
+	</update>
+
+	<delete id="delete">
+		delete from product_details_page where p_no = #{p_no}
+	</delete>
+
+			<!-- 상세페이지에서 해당 상품의 전체 후기 보기 -->
+	<select id="product_all_review_list" resultType="com.bbs.model.ProductDTO">
+		
+		select * 
+		from product as p join p_order as po on p.p_no = po.p_no  
+		join review as r on po.order_no = r.order_no 
+		where  p.p_no = #{p_no} limit #{skip}, #{amount}
+	</select>
+	
+	<select id="reviewCount" parameterType="com.bbs.model.ProductDTO" resultType="int">
+	select count(*) from product p join p_order po on p.p_no = po.p_no 
+						join review r on po.order_no = r.order_no
+	where  p.p_no = #{p_no}
+	</select>
+	
+	<select id="getTotal" parameterType="com.bbs.model.ProductDTO" resultType="int">
+	select count(*) from product p join p_order po on p.p_no = po.p_no 
+						join review r on po.order_no = r.order_no
+	where  p.p_no = #{p_no}	
+	</select>
+	
+</mapper>

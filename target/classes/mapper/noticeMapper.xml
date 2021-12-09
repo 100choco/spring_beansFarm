@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bbs.mapper.NoticeMapper">
+	
+
+
+	
+	<!-- 글 select -->
+	<select id="noticeSelectByAll" resultType="com.bbs.model.NoticeDTO">
+		select * from notice order by notice_no desc
+	</select>
+
+	<!-- 글insert -->
+	<insert id="noticeInsert">
+		insert into notice (notice_title, notice_content, manager_no, notice_fix) 
+			values(#{notice_title}, #{notice_content}, #{manager_no}, #{notice_fix});
+	</insert>
+	
+	
+	<!-- 상단 고정 select -->
+	<select id="noticeFixSelect" resultType="com.bbs.model.NoticeDTO">
+		select notice_no, notice_title, notice_content, notice_reg_date, notice_view_count, manager_name, notice_fix  from notice as ti
+			join manager as mg 
+			on ti.manager_no = mg.manager_no
+			order by notice_fix desc, notice_no desc limit 5
+	</select>
+	
+	<!-- 페이징 -->
+	<select id="listAll" resultType="com.bbs.model.NoticeDTO">
+	
+		select notice_no, notice_title, notice_content, notice_reg_date, notice_view_count, manager_name from notice as ti
+			join manager as mg 
+			on ti.manager_no = mg.manager_no
+			<if test="keyword != null">
+				<choose>
+				
+	            	<when test='type == "T"'>
+	                	where notice_title like concat('%', #{keyword}, '%') 
+	            	</when>
+	            
+		            <when test='type == "C"'>
+		                where notice_content like concat('%', #{keyword}, '%')
+		            </when>
+		            <when test='type == "TC"'>
+		                where (notice_title like concat('%', #{keyword}, '%')
+						or notice_content like concat('%', #{keyword}, '%'))
+		            </when>
+	        	</choose>
+			</if>
+				order by notice_no desc
+		limit #{skip}, #{amount};
+	</select>
+	
+	<!-- 페이징 관련 -->
+	<select id="getTotal" resultType="int">
+		select count(*) from notice
+			<if test="keyword != null">
+				<choose>
+				
+			       	<when test='type == "T".toString()'>
+			           	where notice_title like concat('%', #{keyword}, '%') 
+			       	</when>
+			       
+			        <when test='type == "C".toString()'>
+			            where notice_content like concat('%', #{keyword}, '%')
+			        </when>
+			        <when test='type == "TC".toString()'>
+			            where (notice_title like concat('%', #{keyword}, '%')
+						or notice_content like concat('%', #{keyword}, '%'))
+			        </when>
+       			</choose>
+			</if>
+		
+	</select>
+	
+	<!-- 글 상세보기  -->
+	<select id="noticeDetail" resultType="com.bbs.model.NoticeDTO">
+		select * from notice where notice_no = #{notice_no} 
+	</select>
+	
+	<!-- 글 삭제 -->
+	<delete id="noticeDelete">
+		delete from notice where notice_no = #{notice_no}
+	</delete>
+	
+	<!-- 글 수정 -->
+	<update id="noticeUpdate">
+		update notice set notice_title = #{notice_title}, notice_content = #{notice_content}, notice_fix = #{notice_fix} where notice_no = #{notice_no} 
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="updateviewcnt">
+		update notice
+		set notice_view_count = notice_view_count + 1
+		where notice_no = #{notice_no}
+	</update>
+	
+	
+</mapper>

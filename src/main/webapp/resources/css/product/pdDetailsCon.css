@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+#content {
+    width: 100%;
+}
+
+#con1 {
+    /* border: 3px solid blue; */
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.top_r {
+    /* border: 1px solid red; */
+    width: 40%;
+    margin: 2% 3% 5% 0%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.top_l {
+    /* border: 1px solid red; */
+    margin: 2% 0% 5% 0%;
+    width: 40%;
+}
+
+.p_name, .p_opName {
+    padding: 2% 3%;
+}
+
+.tb_title img {
+    width: 3%;
+}
+
+.tb_title, .tb_op, .tb_total, .tb_btn {
+    width: 100%;
+}
+
+.tb_title tr th{
+    /* border: 1px solid rgb(181, 164, 185); */
+    padding: 2%;
+    width: 3%;
+    font-weight: normal;
+    text-align: left;
+}
+
+.tb_op {
+    border-top: 1px solid rgb(181, 164, 185);
+    border-bottom: 1px solid rgb(181, 164, 185);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.tb_op tr th{
+    padding: 2%;
+    width: 2%;
+}
+
+.tb_title tr td{
+   
+    padding: 2%;
+    width: 8%;
+}
+
+.tb_op tr td {
+
+    padding: 2%;
+    text-align: center;
+}
+
+.tb_total tr td {
+ 
+    padding: 2%;
+    text-align: right;
+}
+
+#basketBtn {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #FFFFE0;
+}
+
+#buyBtn {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #FFCCC9;
+}
+
+#con2 {
+
+    width: 100%;
+}
+
+#con2 ul {
+    
+    width: 100%;
+    
+    justify-content: center;
+}
+
+#con2 ul li{
+    
+    
+    padding: 1% 5%;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px) {
+    #con1 {
+        /* border: 3px solid blue; */
+        width: 100%;
+
+        display: block;
+    }
+
+    .top_r {
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .top_r img{
+        width: 80%;
+    }
+
+    .top_l {
+        /* border: 1px solid red; */
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    #basketBtn {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 1rem;
+        background-color: #FFFFE0;
+    }
+    
+    #buyBtn {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 1rem;
+        background-color: #FFCCC9;
+    }
+
+    iframe {
+        width: 100%;
+        height: 10000px;
+        overflow-x:hidden;
+        overflow:auto;
+        /* min-height:500px; */
+    }
+    
+
+
+}
+
+
+/* 추가 요소 */
+
+
+
+
+#con2 ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+.tab_basic { width: 80%; margin: auto; }
+.tab_list_wrap { font-size: 0; height: 35px; }
+.tab_list { display: inline-block; width: 33.3334%; height: 100%; font-size: 15px; line-height: 30px; text-align: center; border: 1px solid #eee; border-right: 0; box-sizing: border-box; }
+.tab_list:last-child { border-right: 1px solid #ffffff; }
+.tab_list.tab_active { background: #eee; }
+.tab_list a { display: block; width: 100%; height: 100%; text-decoration: none; color: #222; }
+.tab_content { display: none; width: 100%; min-height: 100px; padding: 20px; background: #ffffff; box-sizing: border-box; }
+.tab_content:first-child { display: block; }
+
+.mypageTabel {
+    margin: 0 auto;
+    width: 95%;
+    
+    
+    min-width: 63rem;
+    border-spacing: 0;
+}
+
+.mypageTabel th{
+	
+	height: 5rem;
+}
+
+.mypageTabel td{
+	border-top: solid 0.1rem #D3D3D3;
+	height: 3rem;
+}
+
+.pageInfo {
+	display: flex;
+	 justify-content: center;
+}
+
+.pageInfo li {
+    /* border: 1px solid red; */
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    margin: 0% 0.5%;
+   
+}
+
+.pageInfo li a{
+	 text-decoration : none;
+	 color: black;
+}
+
+.pageInfo li a:hover {
+	color: red;
+}
+
+
+/* ==========================================  모달 생성 */
+.modal { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	display: none; 
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal.show { 
+	display: block; 
+} 
+
+.modal_body {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	width: 300px; 
+	height: 100px; 
+	padding: 40px; 
+	text-align: center; 
+	background-color: rgb(255, 255, 255);
+	border : 0.1rem solid black;
+	border-radius: 10px; 
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15); 
+	transform: translateX(-50%) translateY(-50%); 
+}
+
+#yes {
+	width: 30%;
+	padding: 2%;
+	margin-right : 2%;
+	background-color: #3CB371;
+	border : 0.1rem solid white;
+	color: white;
+	cursor: pointer;
+}
+
+#no {
+	width: 30%;
+	padding: 2%;
+	background-color: #FF695B;
+	border : 0.1rem solid white;
+	color: white;
+	cursor: pointer;
+}
+
+/* 포인터 */
+#p {
+	color: 	#4169E1;
+}
+
+

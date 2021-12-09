@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+#popup {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}    
+
+.realSearch:focus{
+	outline:none;
+}
+
+#searchFormx{
+	
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    margin-top: 8rem;
+    cursor: pointer;
+    width: 100%;
+	
+	
+}
+
+.searchForm{
+	
+	/* border: 0.1rem solid white; */
+    width: 25rem;
+    height: 2.5rem;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+
+.realSearch{
+	
+	border:none;
+	background-color:transparent;
+	font-size: 1.5rem;
+	color: white;
+}
+
+#searchAction{
+	color: white;
+	cursor: pointer;
+	margin-left: 3rem;
+}
+
+#search{
+    cursor: pointer;   
+    z-index: 1; 
+}
+
+.fas{
+   color : black;
+}
+
+.top{
+   
+    position: fixed;
+    bottom: 3.12rem; 
+    right: 3.12rem;
+
+}
+
+
+
+.header{
+    /* sticky 속성은 static과 fixed 속성의 특징을 모두 가지고 있는 속성입니다.
+     sticky 영역의 x 또는 y 위치값이 설정한 위치에 도달하기 전까지는 static,
+      도달 이후에는 fixed처럼 행동하게 됩니다. */
+    width: 100%;
+    text-align: center;
+    position: sticky; 
+    top: 0rem;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 1;
+    
+
+}
+
+.nav{
+
+    width: 100%;
+    height: 3.12rem;
+
+    display: flex;
+    justify-content: space-between;
+
+/*     
+    border-bottom: 0.1rem solid brown; */
+    
+}
+.m_logo{
+    display: none;
+}
+
+.loginBlank{
+   
+   
+   text-align : center;
+    width: 11rem;
+}
+
+#i_all{
+   
+   margin-top: -1rem;
+}
+
+@media (min-width:600px) {
+
+
+   .m_list{
+        display: none;
+    }
+
+}
+
+@media (max-width:600px) {
+   
+      .loginBlank{
+   
+      
+      text-align : center;
+       width: 11rem;
+       height: 2rem;
+   }
+
+      #i_all{
+         
+         margin-top: -2rem;
+   }
+   
+    .m_list{
+        width: 300px;
+        table-layout: fixed;
+    }
+    
+    .m_list tr{
+        width: 100%;
+    }
+    
+    .m_list tr td{
+        width: 100%;
+    }
+    
+    .slide{
+        display: none;
+    }
+
+   /* .headerSide{
+   display: block;
+   } */
+
+    .iuserInfo.fas.fa-user-alt.fa-lg{
+        display: none;
+    }
+
+    .header{
+        height: 5.62rem;
+        line-height: 8.75rem;
+        background-color: #ffffff; 
+        border: 1px;
+        position: fixed;
+        position: sticky; 
+        top: 0;
+        left: 0;
+        right: 0;
+        display: inline-block;
+
+        
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .nav{
+        height: 5.62rem;
+        border-bottom: 0.1rem;
+    }
+
+    .i{
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .m_logo{
+        display: flex;
+        width: 0rem;
+        height: 0rem;
+        margin: 0rem;
+        margin-left: 3.125rem;
+    }
+
+    .logo{
+        
+        display: none;
+        
+    }
+    
+    .w_list{
+        display: none;
+    }
+
+
+   .sidebar .logo{
+      display: block;
+   }
+    
+
+    .mainmenu:hover .hoMenu{
+	    display: block;
+	    text-align: center;
+	    position: absolute;
+    }
+    
+    
+}
+
+
+
+.logo{
+    text-align: center;
+    font-size: 3.125rem;
+    
+}
+
+
+
+.menu{
+    width: 75%;
+    margin: auto;
+    margin-right: 0%;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    
+}
+
+.i{
+   
+    width: 180px;
+    margin-right: 0rem;
+    
+}
+
+.i i{
+    display: inline-block;
+    text-align: center;
+    margin-left: 0.9rem;
+    margin-top: 1.25rem;
+    color: black;
+}
+
+
+.blank{
+    
+    width: 20%;
+}
+
+
+.menu a{
+    text-decoration-line: none;
+    color: black;
+}
+
+.menu ul{
+    text-align: center;
+   
+}
+
+.mainmenu{
+    border: 1px;
+    display: inline-block;
+    color: black;
+    list-style-type: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    position: relative;
+    font-size: 1.25rem;
+   
+}
+
+.hoMenu{
+   display: none;
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+    padding-left: 1.25rem;
+
+}
+
+.hoMenu li{
+    background-color: rgba(255,255,255,0.8);
+    display: block;
+    text-decoration: none;
+    margin-left: -2.5rem;
+    
+
+}
+
+.hoMenu a{
+    display: block;
+    
+}
+
+.mainmenu:hover .hoMenu{
+    display: block;
+    text-align: center;
+    position: absolute;
+}
+
+.hoMenu a:hover{
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: red;
+    
+}
+
+.mainmenu a:hover {
+   	color: red;
+}
+
+
+.hoMenu{
+    position: absolute;
+}
+
+.slide{
+    margin-top: 3.12rem;
+    width: 80%;
+    height: 20rem;
+    border: 0.1rem solid black;
+}
+
+#top{
+
+    border: 1rem ;
+
+}
+
+/* ============ 로그인 상태, 로그아웃 상태 ==================================== */
+
+#login{
+   width: 15rem;
+   
+   margin-left: -3.3rem;
+   
+}
+
+
+
+
+/* ================================사이드바====================================== */
+
+input[id="menuicon"] {display:none;}
+input[id="menuicon"] + label {display: block; margin: 10px; width: 25px; height: 18px; position: relative; cursor: pointer;}
+input[id="menuicon"] + label span {display: block; position: absolute; width: 100%; height: 3px; border-radius: 30px; background: #000; transition: all .35s;}
+input[id="menuicon"] + label span:nth-child(1) {top:0;}
+input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);}
+input[id="menuicon"] + label span:nth-child(3) {bottom: 0;}
+input[id="menuicon"]:checked + label {z-index:2;}
+input[id="menuicon"]:checked + label span {background: #222;}
+input[id="menuicon"]:checked + label span:nth-child(1) {top:50%; transform: translateY(-50%) rotate(45deg);}
+input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%; transform: translateY(50%) rotate(-45deg);}
+
+div[class="sidebar"] {width:310px;height:100%;background:#BEA5BE;position:fixed;top:0;left:-310px; z-index:1; transition:all .35s;}
+input[id="menuicon"]:checked + label + div {left:0;} 
+
+
+
+
+.headerSide{
+    display: none;
+}
+
+
+@media screen and (max-width:600px){
+   .headerSide{
+        display: block;
+        margin-left: 9rem;
+        margin-top: -5.6rem;
+    }
+    
+    body{ 
+    	-ms-overflow-style: none; 
+    } 
+    
+    ::-webkit-scrollbar { 
+    	display: none; 
+    }
+    
+    .sidebarlist{
+       height: 15%;
+    }
+   
+}
+
+.sidebar{
+    width: 90%;
+    height: 80%;
+}
+
+
+
+.sidebarlist h2 {
+	text-align: right;
+	margin-top : -4rem;
+	margin-bottom : -4rem;
+	margin-right: 0.5rem;
+	padding: 0%;
+}
+
+.sidebarlist h3{
+    
+    text-align: left;
+    margin-left : 0.5rem;
+    border: 1px;
+    width: 90%;
+    color: white;    
+}
+
+.sidebarlist hr {
+	width : 60%;
+	margin-top : -3rem;
+}
+
+.sidebarlist{
+    color: white;
+    margin-top : -4rem;
+    font-size: 1.2rem;
+}
+
+.sidebarlist a{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebarlist ul li{
+    margin: -1.5rem;
+    list-style: none;
+}
+
+.sidebarlist hr{
+    width: 80%;
+}

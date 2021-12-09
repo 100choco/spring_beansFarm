@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* #conter {
+    width: 100%;
+    min-height : 80vw;
+    height : auto;
+    display: flex;
+    justify-content: center;
+	margin-top: 10%;
+    border: 1px solid red;
+} */
+
+#content {
+    width: 30%;
+    margin: 0 auto;
+    min-height : 80vw;
+    height : auto;
+    
+}
+
+#content h1 {
+    text-align: center;
+    margin-top: 50%;
+    /* border: 1px solid green; */
+}
+
+#loginTbl {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    /* border: 1px solid green; */
+}
+
+#loginTbl a{
+    color: black;
+    text-decoration: none;
+}
+
+#loginTbl a:hover{
+    color: blue;
+}
+
+#loginTbl td {
+    /* border: 1px solid blue; */
+    padding: 1% 0%;
+}
+
+.border {
+    border-bottom: 0.1rem solid black;
+}
+
+#loginTbl td input, #m_logninBtn {
+    /* border: 1px solid blue; */
+    width: 100%;
+    padding: 2% 0%;
+    /* border: none; */
+    /* outline:none; */
+}
+
+#loginTbl td input:focus, #m_logninBtn {
+    outline:none;
+}
+
+#m_logninBtn {
+    border: 1px solid blue;
+    color: blue;
+    font-size: 1.2rem;
+}
+
+#m_logninBtn:hover {
+    /* border: 1px solid black; */
+    color: white;
+    background-color: blue;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width:600px) {
+	
+	/* #conter {
+		width: 100%;
+	    min-height : 50vw;
+    	height : auto;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 20% 0%;
+	    
+	} */
+	
+    #content{
+        width: 100%;
+        min-height : 80vw;
+    }
+    
+    #content hr {
+    	width: 80%;
+    	margin: 0 auto;
+    }
+}

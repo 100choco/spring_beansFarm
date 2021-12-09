@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+#content {
+    width: 80%;
+    min-height : 80vw;
+    height : auto;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+#content h1 {
+    padding-top: 3%;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#adminTbl {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#adminTbl th{
+    /* border: 1px solid red; */
+    padding: 1% 2%;
+    background-color: rgb(226, 226, 226);
+    text-align: left;
+    width: 20%;
+}
+
+#adminTbl td{
+    /* border: 1px solid blue; */
+    padding: 0.5% 2%;
+}
+
+#adminTbl td input, #joinBtn, #homeBtn{
+    /* border: 1px solid blue; */
+    padding: 0.5% 0.5%;
+}
+
+#homeBtn, #joinBtn, #mag_joinreset {
+    width: 10%;
+    border-radius: 15rem;
+    color: black;
+}
+
+#homeBtn:hover, #joinBtn:hover, #mag_joinreset:hover {
+    width: 10%;
+    background-color: rgb(226, 226, 226);
+    color: black;
+}
+
+@media screen and (max-width:600px) {
+    #content {
+        width: 95%;
+        /* border: 1px solid red; */
+        margin: 0 auto;
+    }
+
+    #memberTbl {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #memberTbl th{
+        /* border: 1px solid red; */
+        padding: 1%;
+        background-color: rgb(226, 226, 226);
+        text-align: center;
+        width: 40%;
+    }
+    
+    #memberTbl td{
+        /* border: 1px solid blue; */
+        width: 60%;
+        padding: 0.5%;
+    }
+
+}

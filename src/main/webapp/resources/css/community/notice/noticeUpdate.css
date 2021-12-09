@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+#con2 {
+    /* 추가 */
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+	min-height : 80vw;
+    height : auto;
+}
+#menu_m {
+    display: none;
+}
+
+#updateTbl{
+	margin: 0 auto;
+    width: 80%;
+    border-top: 0.1rem solid black;
+    border-bottom: 0.1rem solid black;
+    border-spacing: 0;	
+}
+#updateTbl td{
+	padding: 0.8%;
+	border-bottom: 0.1rem solid #D3D3D3;
+    font-size: 1rem;
+}
+
+#updateTbl th{
+	padding: 1%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    height: 2rem;
+}
+
+input{
+	height: 2rem;
+	outline: none;
+ 	font-size: 1rem; 
+}
+
+#updateTbl textarea{
+	outline: none;
+}
+
+.button2 {
+  background-color: white;
+  margin-top : 1%;
+  margin-right : 1%;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1rem;  
+}
+
+.button2:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+#btnGroup{
+ 	display: flex;
+ 	justify-content: center;
+}
+
+#notice_fix{
+	height: 2.2rem;
+	width: 20%;
+	font-size: 1rem;
+}
+
+#notice_content{
+	font-size: 1rem;
+	padding: 0;
+}
+
+
+
+
+#noticeTbl2 {
+   border-bottom: 0.1rem solid black;
+}
+
+.noticeTbl{
+    margin: 0 auto;
+    padding: 1%;
+    width: 95%;
+}
+
+#noticeTbl td {
+    padding: 0.5%;
+}
+
+#noticeTbl th {
+    padding: 0.5%;
+}
+
+#noticeTbl2 td {
+    padding: 0.5%;
+}
+
+#noticeTbl2 th {
+    padding: 0.5%;
+}
+
+.pageInfo{
+	margin-top : 3%;
+    text-align: center;
+}
+
+.pageInfo li{
+      display : inline-block;
+      list-style-type: none;
+      margin-left: 2%;
+   }
+   
+.pageInfo li a{
+      float: left;
+}
+
+
+
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+    #con2 {
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        text-decoration: none;
+        color: #000;
+        
+    }
+    
+#backbtn, #upbtn, #delbtn{
+	margin-top: 1%;
+	width: 18%;
+}
+
+	#table-container table, 
+	#table-container thead, 
+	#table-container tbody, 
+	#table-container th, 
+	#table-container td, 
+	#table-container tr { 
+		display: block; 
+	}
+
+	#table-container thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#table-container td { 
+		/* Behave  like a "row" */
+		border: none;
+		position: relative;
+		padding-left: 30%; /*컬럼위치조정*/
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#table-container td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 5%;
+		left: 5%;
+		width: 45%; 
+		padding-right: 2%;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	#table-container td:before { content: attr(data-title); }
+	
+	td:nth-last-child(1) { margin-bottom: 5%;}
+	
+	#notice_title{
+		width: 90%;
+	}
+	
+	#notice_content{
+		margin-left: 4%;
+	}
+	
+}

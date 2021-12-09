@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/* 제품옵션 div css */
+#opInsetUpdateBox{
+	display: flex;
+}
+
+/* 제품옵션 div css */
+#opInsert{
+	margin-right: 100px;
+}
+
+/* 카테고리, 원산지, 옵션분류 테이블 css */
+#optionsTbl{
+	width : 90%;
+	border-left: none;
+	border-right: none;
+	border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#optionsTbl td {
+	padding: 1% 0%;
+	border-left: none;
+	border-right: none;
+	
+}
+
+/* 카테고리 버튼 css */
+#cateBtn{
+	background-color: #555555;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+#cateBtn:hover{
+	background-color: red;
+    border: 0.1rem solid black;
+    color: white;
+}
+
+/* 원산지 버튼 css */
+#oriBtn{
+	background-color: #555555;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+#oriBtn:hover{
+	background-color: yellow;
+    border: 0.1rem solid black;
+    color: black;
+}
+
+/* 옵션분류 버튼 css */
+#ocBtn{
+	background-color: #555555;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+#ocBtn:hover{
+	background-color: green;
+    border: 0.1rem solid black;
+    color: white;
+}
+
+/* 제품 옵션 버튼 css */
+#pOpBtn{
+	background-color: #555555;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+#pOpBtn:hover {
+	background-color: #50BCDF;
+    border: 0.1rem solid black;
+    color: white;
+}

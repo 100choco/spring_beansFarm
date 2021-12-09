@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* 주소목록 */
+#grad1 {
+  height: 55px;
+  background-color: rgb(0, 255, 128); /* For browsers that do not support gradients */
+  text-align: center; 
+  margin: auto; 
+  font-size: 35px;
+  font-weight: bold;	
+}
+
+/* 테이블 */
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table a{
+   text-decoration: none;
+   color: black;
+   cursor: default; 
+}
+
+th, td {
+  padding: 15px;
+}
+
+/* 버튼 */
+#btnCss{
+	text-align: center;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 12px;
+ 		
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+
+/* 페이징 */
+.center {
+  text-align: center;
+}	
+.pagination {
+  display: inline-block;
+	
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  font-size: 20px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: rgb(0, 255, 128);
+  color: white;
+  border: 1px solid rgb(0, 255, 128);
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+/* 주소 수정부분 */
+#updateBtnCss{
+	text-align: center;
+}
+
+#postnum, #address, #detailed_address{
+   outline: none;
+   width: 100%;
+   font-size: 1rem;
+   border: none;
+}

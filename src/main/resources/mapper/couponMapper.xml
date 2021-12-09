@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.bbs.mapper.CouponMapper">
+
+	<!-- 회원가입시 첫 쿠폰 지급 -->
+	<insert id="couponFirstInsert">
+		insert into coupon(m_no, c_name, c_expiration_date, c_content, c_discount)
+				values(#{m_no}, '[신규 가입 쿠폰]', date_add(now(),INTERVAL 30 DAY), '신규가입 축하 쿠폰 입니다', 20)
+	</insert>
+	
+	<!-- 관리자가 쿠폰 지급 -->
+	<insert id="couponInsert">
+		insert into coupon(m_no, c_name, c_expiration_date, c_content, c_discount)
+				values(#{m_no}, #{c_name}, date_add(now(), INTERVAL #{date} DAY), #{c_content}, #{c_discount})
+	</insert>
+	
+	<!-- 로그인 한 회원의 전체 쿠폰리스트 -->
+	<select id="couponlistOne" resultType="com.bbs.model.CouponDTO">
+		select c.* from member m join coupon c on m.m_no = c.m_no where m.m_no = #{m_no}
+	</select>
+	
+	
+
+</mapper>
+	
+	
+	
+	
+	
+	
+	

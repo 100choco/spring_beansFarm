@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+#content {
+    width: 80%;
+    height: 80vw;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+#content h1 {
+    padding-top: 3%;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+
+#content h3 {
+    padding-top: 2%;
+}
+
+#infoTbl {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+	border-spacing: 0;
+	
+    margin-top: 1%;
+    border-top: 0.1rem solid black;
+    
+}
+
+#infoTbl td {
+    /* border-top: 0.1rem solid black; */
+    border-bottom : 0.1rem solid black;
+    padding: 0.5%;
+    
+}
+
+#basket {
+    width: 10%;
+    padding: 0.5%;
+
+    border: 0.1rem solid green;
+    color: green;
+    border-radius: 15rem;
+}
+
+#basket:hover {
+    width: 10%;
+    padding: 0.5%;
+
+    border: 0.1rem solid green;
+    background-color: green;
+    color: white;
+}
+
+#amountBox {
+    /* border: 1px solid blue; */
+    width: 100%;
+    padding: 3% 0%; 
+    text-align: right;
+    font-size: 1.2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.price {
+    /* border: 1px solid red; */
+    padding: 1% 3%;
+}
+
+.discount {
+    /* border: 1px solid red; */
+    padding: 1% 3%;
+}
+
+.total {
+    /* border: 1px solid red; */
+    padding: 1% 3%;
+}
+
+.icon1 {
+    /* border: 1px solid red; */
+    padding: 1% 1%;
+}
+
+.icon2 {
+    /* border: 1px solid red; */
+    padding: 1% 1%;
+}
+
+#order {
+    /* border: 1px solid red; */
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+#orderBtn {
+    width: 20%;
+    padding: 0.5%;
+    border: 0;
+    color: black;
+    background-color: rgb(233, 233, 233);
+    font-size: 1.5rem;
+    border-radius: 15rem;
+}
+
+#orderBtn:hover {
+    width: 20%;
+    padding: 0.5%;
+    /* border: 0.2rem solid green; */
+    color: white;
+    background-color: green;
+    font-size: 1.5rem;
+    border-radius: 15rem;
+}
+
+
+#total_price {
+	border: 0;
+	text-align: right;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+#total_price:focus {
+	outline:none;
+}
+
+#choiceBtn, #allBtn {
+	font-weight : bold;
+	padding: 1% 2%;
+	color: green;
+    background-color: rgb(233, 233, 233);
+    border: 0.1rem solid green;
+}
+
+#choiceBtn:hover, #allBtn:hover {
+	color: white;
+    background-color: green;
+}
+
+@media screen and (max-width:600px) { 
+    #content {
+        width: 95%;
+        height: 200vw;
+        margin: 0 auto;
+        border: 1px solid rsed;
+    }
+    
+    #basket {
+        width: 30%;
+        padding: 1%;
+    }
+    
+    #basket:hover {
+        width: 30%;
+        padding: 1%;
+    }
+
+    #orderBtn {
+        width: 30%;
+        padding: 1%;
+        border: 0;
+        color: black;
+        background-color: rgb(233, 233, 233);
+        font-size: 1.2rem;
+        border-radius: 15rem;
+    }
+    
+    #orderBtn:hover {
+        width: 30%;
+        padding: 1%;
+        border: 0;
+        /* border: 0.2rem solid green; */
+        color: white;
+        background-color: green;
+        font-size: 1.2rem;
+        border-radius: 15rem;
+    }
+    
+}

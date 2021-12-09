@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.FaqMapper">
+	
+	<!-- Faq게시글 등록 -->
+	<insert id="faq_enroll">
+		insert into faq(ic_no,faq_title,faq_content)
+		values(#{ic_no},#{faq_title}, #{faq_content})
+	</insert>
+	
+	<!-- faq게시판 목록 -->
+	<select id="getList" resultType="com.bbs.model.FaqDTO">
+		<!-- select * from faq -->
+		select f.faq_no, i.ic_name, f.faq_title, f.faq_content 
+			from faq f inner join inquiry_classification i 
+		      on i.ic_no = f.ic_no 
+		order by faq_no desc
+	</select>
+	
+	<!-- Faq게시판 조회 -->
+	<select id="getPage" resultType="com.bbs.model.FaqDTO">
+		select * from faq where faq_no = #{faq_no}
+	</select>
+	
+	<!-- Faq게시판 수정 -->	
+	 <update id="faq_modify">
+        update faq set faq_title = #{faq_title}, faq_content
+		= #{faq_content}
+		where faq_no = #{faq_no}
+    </update>
+	
+	<!-- Faq게시판 삭제 -->
+	<delete id="faq_delete">
+		delete from faq where faq_no = #{faq_no}
+	</delete>
+	
+	
+	<!-- 페이징, 게시글 총 개수 버전1 -->
+ 	<!-- <select id="getListPaging" resultType="com.bbs.model.FaqDTO"> 
+		select f.faq_no, i.ic_name, f.faq_title, f.faq_content 
+			from faq f inner join inquiry_classification i 
+		      on i.ic_no = f.ic_no 
+		order by faq_no desc
+		limit #{skip}, #{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from beansFarm.faq
+	</select>   -->
+
+	
+	<!-- 페이징, 검색, 게시글 총 개수 버전2-->
+<!--   <select id="getListPaging" resultType="com.bbs.model.FaqDTO"> 
+		select f.faq_no, i.ic_name, f.faq_title, f.faq_content 
+			from faq f inner join inquiry_classification i 
+		      on i.ic_no = f.ic_no
+		      
+				<if test="type == 'faq_title'">
+			           where faq_title like concat('%',#{keyword},'%') 
+			    </if>
+			            
+			    <if test="type == 'ic_name'">
+				       where ic_name l
+				       
+				       ike concat('%',#{keyword},'%') 
+				</if>
+		
+		order by faq_no desc
+		limit #{skip}, #{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from beansFarm.faq
+		<if test="keyword != null"> 
+			 ic_name like concat('%', #{keyword}, '%')  
+		</if>	
+	</select>   -->
+	
+	<!-- 페이징, 검색, 게시글 총 개수 버전3 -->
+  	 <select id="getListPaging" resultType="com.bbs.model.FaqDTO"> 
+		select f.*, f.faq_no, i.ic_name, f.faq_title, f.faq_content from faq f join inquiry_classification i
+		where f.ic_no = i.ic_no
+		<if test="keyword != null"> 
+			<choose>
+				<when test="type == 'faq_title'">
+			           and faq_title like concat('%',#{keyword},'%') 
+			    </when>
+			            
+			    <when test="type == 'ic_name'">
+				       and ic_name like concat('%',#{keyword},'%') 
+				</when>
+			</choose>	  
+		</if>
+		order by faq_no desc
+		limit #{skip}, #{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from faq f join inquiry_classification i
+			where f.ic_no = i.ic_no
+			<if test="keyword != null"> 
+				and ic_name like concat('%', #{keyword}, '%')  
+			</if>	 
+	</select>
+   
+   
+	<!-- 페이징, 검색, 게시글 총 개수 버전4 -->  
+<!--   	
+	<sql id="search">
+        <trim prefix="where (" suffix=")" prefixOverrides="OR">
+            <foreach collection="typeArr" item="type">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'faq_title'.toString()">
+                            faq_title like concat('%',#{keyword},'%') 
+                        </when>
+                        <when test="type == 'ic_name'.toString()">
+                            ic_name like concat('%',#{keyword},'%') 
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>   
+    </sql>
+	
+	<select id="getListPaging" resultType="com.bbs.model.FaqDTO">  
+		select f.faq_no, i.ic_name, f.faq_title, f.faq_content 
+		  from faq f inner join inquiry_classification i 
+			on i.ic_no = f.ic_no	
+			<if test="keyword != null"> 
+				<include refid="search"></include>  
+			</if>
+	   		order by faq_no desc
+		limit #{skip}, #{amount}
+  
+	</select>	
+		
+
+	<select id="getTotal" resultType="int">
+			select count(*) from beansFarm.faq	
+		<if test="keyword != null">       
+	        <include refid="search"></include> 
+	    </if>
+	</select>    -->
+
+
+</mapper>

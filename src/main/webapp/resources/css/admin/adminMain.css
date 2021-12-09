@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+
+#con2 {
+    /* border: 1px solid blue; */
+    /* margin: 0% 2%; */ 
+    
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+
+.order {
+    border: 0.1rem solid gray;
+    width: 80%;
+    margin: 1%;
+}
+
+.order h1 {
+	text-align: center;
+}
+
+.member {
+    border: 0.1rem solid gray;
+    width: 80%;
+    margin: 1%;
+}
+
+.member h1 {
+	text-align: center;
+}
+
+#adminTbl{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-spacing: 0;
+}
+
+#adminTbl th, td {
+	padding: 1% 0%;
+	border-bottom: 0.1rem solid black;
+}
+
+.pageInfo {
+	width : 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.pageInfo li {
+    /* border: 1px solid red; */
+    text-transform: none;
+    display: flex;
+
+    justify-content: center;
+    margin: 0% 0.5%;
+}
+
+.pageInfo li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.pageInfo li a:hover {
+    text-decoration: none;
+    color: red;
+}

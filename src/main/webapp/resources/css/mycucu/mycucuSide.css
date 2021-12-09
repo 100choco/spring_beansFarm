@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+#con1 {
+    /* 추가 */
+   /* border: 1px solid blue;  */
+    min-width : 11rem;
+    width: 15%;
+    margin-left: 5%;
+    padding : 3% 0%;
+    
+}
+
+#con1 h3{
+	margin-left: 0rem;
+}
+
+.mycoco_view{
+	background-color : #FBDEDC;
+	font-weight: bold;
+	font-size : 1.5rem;
+}
+
+#con1 ul li{
+    /* 추가 */
+    /* border: 1px solid red; */
+    padding: 3% 2%;
+    
+}
+
+
+
+#con1 ul li a{
+    /* 추가 */
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: #000;
+    
+}
+
+#con1 ul li:hover{
+    background-color: #FBDEDC;
+    font-weight: bold;
+
+}
+
+
+
+
+@media screen and (max-width:600px) {
+    #con1{
+        display: none;
+    }
+}

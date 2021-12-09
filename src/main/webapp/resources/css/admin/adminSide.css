@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+#con1 {
+    width: 10%;
+    background-color: #3a3a3a;
+    color: #fff;
+    padding-bottom: 13%;
+}
+
+#managerImg {
+	margin-top : 30%;
+    padding: 10% 3%;
+
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+
+#list {
+    width: 100%;
+    margin-top: 50%;
+
+}
+
+#list a{
+   text-decoration: none;
+   color: #fff;
+   font-weight: bold;
+}
+
+#list ul li {
+    padding: 10% 8%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#list ul li:hover {
+	background-color: yellow;
+	font-weight: bold;
+}
+
+#list ul li:hover a {
+	color: black;
+	font-weight: bold;
+}
+
+#list ul li a:hover, #pinsert a:hover {
+    color: red;
+    font-weight: bold;
+    
+}

@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+#con2 {
+    /* 추가 */
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+	min-height : 80vw;
+    height : auto;
+}
+
+#menu_m {
+    display: none;
+}
+
+#noticeTbl {
+    margin: 0 auto;
+    width: 85%;
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-spacing: 0;
+}
+
+#noticeTbl td {
+    padding: 0.8%;
+    border-bottom: 0.1rem solid #D3D3D3;
+/*  border-right: none;
+    border-left: none; */
+    font-size: 1.2rem;
+}
+
+#noticeTbl th {
+    padding: 0.5%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    height: 2rem;
+}
+
+/* 글 작성하기 버튼	 */
+#btn{
+	float: right;
+	width: 8%;
+    padding: 0.5%;
+    font-size: 1rem;
+    margin-bottom : 1%;
+    margin-right: 8%;
+}
+
+
+.answerChk {
+	color: red;
+	border:none;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.statusChk {
+	color: black;
+	border:none;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+/* 전체 글 리스트 조회 a태그 밑줄 및 색상제거	 */
+ a{
+	color : black;
+	text-decoration: none;	
+}
+
+/* 페이징 부분 위치조정	*/
+.pageInfo{
+	text-align: center;
+}
+
+.pageInfo li{
+		display : inline-block;
+		list-style-type: none;
+		margin-left: 2%;;
+	}
+	
+.pageInfo li a{
+		float: left;
+	}
+
+/* 입력한 내용 그대로 출력(화면사이즈에 맞게 자동 줄내림) */
+#p_content{
+	white-space: pre-wrap;
+}
+
+/* 게시글 호버 */
+/* #dataTr:hover{
+	background-color: #D3D3D3;
+	background-color: rgba(211, 211, 211, 0.4);
+} */
+
+/* 입력창 크기 조절 및 테두리 제거  */
+input{
+	/* border:none; */
+	height: 2rem;
+	outline: none;
+ 	font-size: 1rem; 
+}
+
+/* 내용칸 테두리 제거  */
+textarea{
+	outline: none;
+	font-size: 1rem;
+	margin-right: 19%;
+}
+
+/* 분류번호칸 크기 및 폰트 조절  */
+#ic_no{
+	height: 3rem;
+/* 	border:none; */
+	font-size: 1rem;
+}
+
+/* 작성자 중앙정렬 밑 인풋 테투리 제거  */
+#writer{
+	border: none;
+	text-align: center;
+}
+
+/* 버튼 */
+.button2 {
+  background-color: white;
+  margin-top : 1%;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1rem;  
+}
+
+.button2:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+/* QnA문구 위치 조정 */
+.contentTitle{
+	margin-left: -4%;
+}
+
+/* 문의 내용 길이조정  */
+#q_content{
+	height: auto;
+}
+
+/* 답변 내용 길이조정  */
+#q_answer{
+	height: auto;
+}
+
+/* 버튼 묶어서 위치 조정  */
+#btnGroup{
+ 	display: flex;
+ 	justify-content: center;
+ 	margin-left: -7%
+}
+
+/* 문장 길이조절 */
+.txtShort{
+   max-width: 25rem;
+   text-overflow : ellipsis;
+   overflow : hidden;
+   white-space : nowrap;
+}
+
+ 
+#q_no{
+	border: none;
+	text-align: center;
+}
+
+/* 내용 입력창 위치 조절  */
+textarea{
+	margin-left: 17%;
+	
+}
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+
+    #con2 {
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        text-decoration: none;
+        color: #000;
+        
+    }
+
+
+    #noticeTbl {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 0.8rem;
+        border-top: 0.2rem solid black;
+        border-bottom: 0.2rem solid black;
+    }
+   
+/* 글 작성하기 버튼(모바일)	 */
+    #btn{
+	float: left;
+	width: 18%;
+	color: black; 
+	border: 0.2rem solid #FFCECB;
+	background-color: white;
+    padding: 0.5%;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    }
+    
+    #btn:hover{
+   background-color: #FFCECB;
+   color: white;
+   cursor: pointer;
+   }
+	
+.button2{
+	width: 18%;
+}
+
+	#table-container table, 
+	#table-container thead, 
+	#table-container tbody, 
+	#table-container th, 
+	#table-container td, 
+	#table-container tr { 
+		display: block; 
+	}
+
+	#table-container thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	 
+	#table-container td { 
+		/* Behave  like a "row" */
+ 		
+		position: relative;
+		padding-left: 30%; /*컬럼위치조정*/
+		white-space: normal;
+		text-align:left;
+		width: 68%;
+	}
+ 
+	#table-container td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 5%;
+		left: 2%;
+		right : 15%;
+		width: 45%; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	#table-container td:before { content: attr(data-title); }
+	
+	td:nth-last-child(1) { margin-bottom: 5%;}
+	
+	#table-container .hide_td{
+		display: none
+	}
+	
+	#table-container tr { 
+		border-top: 0.1rem solid #d3d3d3;
+	}
+
+}

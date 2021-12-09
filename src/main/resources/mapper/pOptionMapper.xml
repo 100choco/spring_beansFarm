@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.POptionMapper">
+
+	<insert id="insert">
+		insert into p_option(op_name, p_no, op_price, op_stock, oc_no) values (#{op_name}, #{p_no}, #{op_price}, #{op_stock}, #{oc_no})
+	</insert>
+
+	<select id="selectByAll" resultType="com.bbs.model.POptionDTO">
+		select * from p_option;
+	</select>
+	
+	<select id="selectByPNo" resultType="com.bbs.model.POptionDTO">
+		select * 
+			from p_option
+				where p_no = #{p_no}
+					order by op_name;
+	</select>
+	
+	<select id="selectByOpNo" resultType="com.bbs.model.POptionDTO">
+		select * 
+			from p_option
+				where op_no = #{op_no}
+					order by op_name;
+	</select>
+
+	<update id="update">
+		update p_option set op_name = #{op_name}, op_price = #{op_price}, op_stock = #{op_stock}, oc_no = #{oc_no} where op_no = #{op_no}
+	</update>
+
+	<delete id="delete">
+		delete from p_option where op_no = #{op_no}
+	</delete>
+	
+	<delete id="pNoDelete">
+		delete from p_option where p_no = #{p_no}
+	</delete>
+	
+
+</mapper>

@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+#con2 {
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+#con2 h1 {
+	margin-top : 2%;
+ 	text-align: left;
+}
+
+.searchBox {
+    /* 추가 */
+    border: 3px solid rgb(223, 221, 221);
+    width: 80%;
+    height: 3%;
+    margin: 0 auto;
+    padding: 1% 0%;
+}
+
+#type {
+    width: 15%;
+    padding: 1%;
+    font-size: 1rem;
+    
+}
+
+
+#keyword {
+    width: 70%;
+    padding: 1%;
+    outline:none;
+    
+}
+
+
+#searchBtn {
+    width: 10%;
+    background-color: #555555;
+    border: 0;
+    color: #fff;
+    padding: 1%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    width: 10%;
+    background-color: yellow;
+    border: 0.1rem solid black;
+    color: black;
+    padding: 1%;
+    font-size: 1rem;
+}
+
+#adminTbl{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-spacing: 0;
+}
+
+#adminTbl th, td {
+	padding: 1% 0%;
+	border-bottom: 0.1rem solid black;
+}
+
+.memberInfo, .couponBtn, .memberpwReset, .memberdelete {
+	padding: 1%;
+	margin: 0% 1%;
+}
+
+.memberInfo {
+	border: 0.1rem solid red;
+}
+
+.memberInfo:hover {
+	border: 0rem;
+	background-color: red;
+	border: 0.1rem solid red;
+	color: white;
+}
+
+.couponBtn {
+	border: 0.1rem solid black;
+}
+
+.couponBtn:hover {
+	border: 0rem;
+	background-color: yellow;
+	border: 0.1rem solid black;
+	color: black;
+}
+
+.memberpwReset {
+	border: 0.1rem solid green;
+}
+
+.memberpwReset:hover {
+	border: 0rem;
+	background-color: green;
+	border: 0.1rem solid green;
+	color: white;
+}
+
+.memberdelete {
+	border: 0.1rem solid blue;
+}
+
+.memberdelete:hover {
+	border: 0rem;
+	background-color: blue;
+	border: 0.1rem solid blue;
+	color: white;
+}
+
+
+.pageInfo {
+	width : 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.pageInfo li {
+    /* border: 1px solid red; */
+    text-transform: none;
+    display: flex;
+
+    justify-content: center;
+    margin: 0% 0.5%;
+}
+
+.pageInfo li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.pageInfo li a:hover {
+    text-decoration: none;
+    color: red;
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#conter {
+    width: 100%;
+    min-height : 80vw;
+    height : auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+
+    /* border: 1px solid red; */
+}
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid red; */
+    
+}
+
+#content h1 {
+    text-align: center;
+}
+
+#pwFindTbl{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid blue; */
+
+}
+
+#pwFindTbl td input {
+    width: 50%;
+    padding: 2% 1%;
+    /* border: 1px solid green; */
+}
+
+#pwFindBtn, #pwRestBtn{
+    width: 50%;
+    padding: 1%;
+    border: 0;
+    background-color: blue;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#previousBtn {
+	width: 10%;
+	padding: 0.5%;
+}

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+#con2 {
+    width: 70%;
+    padding : 2% 0%;
+    margin-left: 2%;
+    text-align: center;
+	min-height : 80vw;
+    height : auto;
+}
+
+#menu_m {
+    display: none;
+}
+
+#noticeTbl {
+    margin: 0 auto;
+    width: 80%;
+    border-top: 0.1rem solid black;
+    border-bottom: 0.1rem solid black;
+    border-spacing: 0;
+}
+
+#noticeTbl td {
+    padding: 0.8%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    font-size: 1.2rem;
+}
+
+#noticeTbl th {
+    padding: 0.5%;
+    border-bottom: 0.1rem solid #D3D3D3;
+    height: 2rem;
+}
+
+.button2 {
+  background-color: white;
+  margin-top : 1%;
+  color: black; 
+  border: 0.2rem solid #FFCECB;
+  cursor: pointer;
+  width: 8%;
+  height: 3rem;
+  font-size: 1rem;  
+}
+
+.button2:hover {
+  background-color: #FFCECB;
+  color: white;
+  cursor: pointer;
+}
+
+#faq_title{
+	border: none;
+/*  	margin-right: 15%; */
+	margin-left: 10%;
+ 	outline: none;
+ 	font-size: 1.2rem;
+}
+
+#faq_content{
+	border: none;
+	outline: none;
+	min-height: 10rem;
+	height: auto;
+	font-size: 1.2rem;
+	white-space: pre-wrap;
+/* 	margin-left: -20%; */
+}
+
+#btnGroup{
+ 	display: flex;
+ 	justify-content: center;
+ 	margin-left: -7%
+}
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+    #con2 {
+        width: 100%;
+        margin: 0%;
+        text-align: center;
+        padding-bottom: 30%;
+    }
+
+    #menu_m {
+        display: block;
+    }
+
+    #menu_m ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    #menu_m ul li{
+        padding: 0% 2%;
+    }
+
+    #menu_m ul li a{
+        text-decoration: none;
+        color: #000;
+        
+    }
+
+    #noticeTbl {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 0.8rem;
+        border-top: 0.1rem solid black;
+        border-bottom: 0.1rem solid black;
+    }
+    
+
+
+.button2{
+	width: 24%;
+}
+    
+ 
+}  

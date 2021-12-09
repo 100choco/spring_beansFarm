@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+#con2 {
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+	
+}
+
+#memberInfo{
+    width: 100%;
+    /* border: 1px solid red; */
+
+    padding: 1%;
+    display: flex;
+    align-items: center;
+}
+
+#info{
+    width: 40%;
+    /* border: 1px solid red; */
+    padding-left: 4%;
+    
+
+}
+
+#memberInfoTbl1 {
+    width: 100%;
+    font-size: 1.2rem;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl1 th {
+    width: 15%;
+    text-align: left;
+    padding: 1%;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl1 td {
+    width: 60%;
+    padding: 1%;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl1 td input {
+    padding: 1%;
+    width: 97%;
+    font-size: 1.2rem;
+}
+
+#membershipName {
+	padding: 1%;
+    width: 100%;
+    font-size: 1rem;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl2 {
+    width: 100%;
+    font-size: 1rem;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl2 th {
+    width: 8%;
+    text-align: left;
+    padding: 1%;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl2 td {
+    width: 60%;
+    padding: 0.5%;
+    /* border: 1px solid red; */
+}
+
+#memberInfoTbl2 td input {
+    padding: 1%;
+    width: 97%;
+    font-size: 1rem;
+}
+
+#gradeUpBtn, #backBtn, #memberdeleteBtn {
+    padding: 2%;
+}
+
+#postNum {
+    padding: 0.2%;
+}
+
+input {
+	border: 0;
+	
+}
+
+input:focus {
+	outline:none;
+}

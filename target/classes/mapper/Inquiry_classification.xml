@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.bbs.mapper.Inquiry_classificationMapper">
+	
+	<select id="listAll" resultType="com.bbs.model.Inquiry_classificationDTO">
+		 select * from inquiry_classification
+	</select>
+	
+ 	<insert id="ic_insert">
+  		insert into inquiry_classification values(#{ic_no}, #{ic_name})
+  	</insert>
+  	
+  	<update id="ic_update">
+  		update inquiry_classification set ic_name = #{ic_name} where ic_no = #{ic_no}
+  	</update>
+
+  	<delete id="ic_delete">
+  		delete from inquiry_classification where ic_no = #{ic_no}
+  	</delete>
+ 
+  </mapper>
