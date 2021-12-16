@@ -10,11 +10,11 @@ Spring MVC 쇼핑몰 프로젝트
 [주요 기능](#주요-기능)  
 [링크](#링크)  
 [외부 리소스](#외부-리소스)
-
+![백승엽](https://user-images.githubusercontent.com/89556598/146303231-a9fefe88-b867-4a2a-b94b-e7a403628669.jpg)
 ## 프로젝트 소개
-
+![백승엽](https://user-images.githubusercontent.com/89556598/146303231-a9fefe88-b867-4a2a-b94b-e7a403628669.jpg)
 Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니다.
-
+![백승엽](https://user-images.githubusercontent.com/89556598/146303231-a9fefe88-b867-4a2a-b94b-e7a403628669.jpg)
 ### 환경
 
 - Spring Framework 5.2.6
