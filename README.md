@@ -4,7 +4,7 @@
 Spring MVC 쇼핑몰 프로젝트
 
 ## 차례
-
+![백승엽](https://user-images.githubusercontent.com/89556598/146303231-a9fefe88-b867-4a2a-b94b-e7a403628669.jpg)
 [프로젝트 소개](#프로젝트-소개)  
 [적용해본 것](#적용해본-것)  
 [주요 기능](#주요-기능)  
